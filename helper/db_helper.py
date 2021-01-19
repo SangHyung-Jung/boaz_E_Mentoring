@@ -21,7 +21,7 @@ class DB_HELPER():
         sql = "SELECT * FROM {};".format(table_name)
         cursor.execute(sql)
         result = cursor.fetchall()
-        self.connection.close()
+        connection.close()
 
         return result
     
@@ -42,5 +42,5 @@ class DB_HELPER():
 
         cursor.executemany(sql, val)
 
-        self.connection.commit()
-        self.connection.close()
+        connection.commit()
+        connection.close()
