@@ -21,4 +21,3 @@ class REALTIME:
             print("ERROR!!")
 
         return data
-

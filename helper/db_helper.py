@@ -31,16 +31,3 @@ class DB_HELPER():
         val = [(int(key), value) for key, value in self.data()]
 
         cursor.executemany(sql, val)
-
-
-a = REALTIME()
-val = [(int(key), value) for key, value in a()]
-val
-k = DB_HELPER()
-k.update_tables()
-k.read_tables() 
-
-sql = 'INSERT INTO soo2(rt_rank, trend) VALUES (1, "박시연")'
-val = (1, '박시연')
-cursor.execute(sql)
-
