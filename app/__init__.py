@@ -1,6 +1,7 @@
 from flask import Flask
 import sys
-sys.path.append("../helper/")
+sys.path.insert(0, "../helper/")
+sys.path.insert(0, '/var/www/flaskapp/helper')
 from db_helper import DB_HELPER
 import time
 
