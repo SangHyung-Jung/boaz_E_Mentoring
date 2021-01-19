@@ -1,6 +1,6 @@
 from flask import Flask
 import sys
-sys.path.append(r"../helper/")
+sys.path.append("../helper/")
 from db_helper import DB_HELPER
 import time
 
