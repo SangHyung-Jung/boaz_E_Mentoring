@@ -15,4 +15,7 @@ def show():
         min = now.tm_min
         if min != min:
             db.update_tables()
-        return db.read_tables()
+        result = {}
+        for i in range(1, 21):
+            result[i] = db.read_tables()[i-1]['trend']
+        return result
