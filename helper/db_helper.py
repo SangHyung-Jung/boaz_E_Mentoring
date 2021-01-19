@@ -31,3 +31,7 @@ class DB_HELPER():
         val = [(int(key), value) for key, value in self.data()]
 
         cursor.executemany(sql, val)
+
+        self.connection.commit()
+
+        self.connection.close()

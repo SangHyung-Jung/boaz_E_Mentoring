@@ -11,6 +11,7 @@ app = Flask(__name__) ## 플라스크를 생성하고 app 변수에 flask 초기
 
 @app.route("/") # 사용자에게 ( ) 에 있는 경로를 안내 해준다고 생각하면 쉬움
 def show():
+    db.update_tables()
     while 1:
         min = now.tm_min
         if min != min:
