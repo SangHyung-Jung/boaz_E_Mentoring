@@ -5,10 +5,10 @@
   </head>
   <body>
       <table border = 1>
-        {% for key value in result.items()}
+        {% for key, value in result.items() %}
         <tr>
-            <th> {key} </th>
-            <td> {value> </td>
+            <th> {{key}} </th>
+            <td> {{value}} </td>
         </tr>
           {% endfor %}
       </table>
