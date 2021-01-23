@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 import sys
 sys.path.insert(0, "../helper/")
 sys.path.insert(0, '/var/www/flaskapp/helper')
@@ -19,4 +19,5 @@ def show():
         result = {}
         for i in range(1, 21):
             result[i] = db.read_tables()[i-1]['trend']
-        return result
+        
+        return render_template("index.html", result = result)
