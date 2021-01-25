@@ -57,7 +57,7 @@ class DB_HELPER():
                     charset = 'utf8'
                 )
         cursor = connection.cursor(pymysql.cursors.DictCursor)
-        sql = "CREATE TABLE 'news'('rt_rank' char(20), 'trend' char(20));"
+        sql = "CREATE TABLE news(rt_rank char(20), trend char(20));"
         cursor.execute(sql)
         connection.commit()
         connection.close()
