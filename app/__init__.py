@@ -23,7 +23,6 @@ def show():
             db.update_tables()
         result = {}
         for i in range(1, 21):
-            print(result[i], "  ", i)
             result[i] = db.read_tables()[i-1]['trend']
         
         return render_template("index.html", result = result)
