@@ -34,19 +34,16 @@ class DB_HELPER():
                     charset = 'utf8'
                 )
         cursor = connection.cursor(pymysql.cursors.DictCursor)
-        try:
-            sql = "DELETE FROM news;"
-            cursor.execute(sql)
+        sql = "DELETE FROM news;"
+        cursor.execute(sql)
 
-            sql = "INSERT INTO news (rt_rank, trend) Values (%s, %s)"
-            val = [(int(key), value) for key, value in self.data()]
+        sql = "INSERT INTO news (rt_rank, trend) Values (%s, %s)"
+        val = [(int(key), value) for key, value in self.data()]
 
-            cursor.executemany(sql, val)
+        cursor.executemany(sql, val)
 
-            connection.commit()
-            connection.close()
-        except:
-            self.create_tables()
+        connection.commit()
+        connection.close()
 
     def create_tables(self, dbname='testdb', table_name ='news'):
         connection = pymysql.connect(
@@ -57,7 +54,7 @@ class DB_HELPER():
                     charset = 'utf8'
                 )
         cursor = connection.cursor(pymysql.cursors.DictCursor)
-        sql = "CREATE TABLE news(rt_rank char(20), trend char(20));"
+        sql = "CREATE TABLE news (rt_rank char(20), trend char(20));"
         cursor.execute(sql)
         connection.commit()
         connection.close()
