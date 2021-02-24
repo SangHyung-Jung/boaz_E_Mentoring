@@ -2,7 +2,7 @@ import pymysql
 from crawling import REALTIME
 
 class DB_HELPER():
-    def __init__(self, host = '13.125.238.201', user = 'test', passwd = 'qkqhdi12', db = 'testdb'):
+    def __init__(self, host = '52.79.37.221', user = 'test', passwd = 'qkqhdi12', db = 'testdb'):
         self.host = host
         self.user = user
         self.passwd = passwd
