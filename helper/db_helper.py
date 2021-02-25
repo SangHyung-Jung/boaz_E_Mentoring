@@ -1,7 +1,7 @@
 import pymysql
 
 class DB_HELPER():
-    def __init__(self, host = '15.165.75.107', user = 'test', passwd = 'qkqhdi12', db = 'testdb'):
+    def __init__(self, host = '3.34.133.14', user = 'test', passwd = 'qkqhdi12', db = 'testdb'):
         self.host = host
         self.user = user
         self.passwd = passwd
