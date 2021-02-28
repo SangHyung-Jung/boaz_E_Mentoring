@@ -34,6 +34,7 @@ class SPARKINPUT:
     def __call__(self, data):
         data = self.session.createDataFrame(data, schema=['rt_rank', 'trend'])
         data = data.take(10)
+        print(data)
         self.db.update_tables(dbname='testdb', table_name = 'news', data = data)
 
 
