@@ -29,11 +29,12 @@ class REALTIME:
 class SPARKINPUT:
     def __init__(self):
         self.session = SparkSession.builder.master("local[1]").getOrCreate()
+        self.db = DB_HELPER()
 
     def __call__(self, data):
         data = self.session.createDataFrame(data, schema=['rt_rank', 'trend'])
         data = data.take(10)
-        DB_HELPER.update_tables(dbname='testdb', table_name = 'news', data = data)
+        self.db.update_tables(dbname='testdb', table_name = 'news', data = data)
 
 
 if __name__== "__main__":
