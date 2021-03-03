@@ -26,3 +26,8 @@ Wed Feb 24 16:40:01 UTC 2021 cron run
 Wed Feb 24 16:43:01 UTC 2021 cron run
 /var/www/flaskapp/daily_update.sh: line 4: $: command not found
 /var/www/flaskapp/daily_update.sh: line 5: $: command not found
+Sat Feb 27 16:43:01 UTC 2021 cron run
+Traceback (most recent call last):
+  File "/var/www/flaskapp/helper/crawling.py", line 3, in <module>
+    from pyspark.sql import SparkSession
+ModuleNotFoundError: No module named 'pyspark'

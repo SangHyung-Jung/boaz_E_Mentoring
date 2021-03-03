@@ -2,8 +2,9 @@ import requests
 from bs4 import BeautifulSoup
 from pyspark.sql import SparkSession
 from db_helper import DB_HELPER
-import os
-os.environ["JAVA_HOME"] = "/usr/bin/jvm/java-1.8.0-openjdk-1.8.0.282.b08-2.el8_3.x86_64"
+import time
+
+
 
 class REALTIME:
     def __init__(self):
@@ -28,13 +29,14 @@ class REALTIME:
 
 class SPARKINPUT:
     def __init__(self):
-        self.session = SparkSession.builder.master("local[1]").getOrCreate()
+        self.session = SparkSession.builder.getOrCreate()
         self.db = DB_HELPER()
 
     def __call__(self, data):
         data = self.session.createDataFrame(data, schema=['rt_rank', 'trend'])
         data = data.take(10)
         print(data)
+        time.sleep(20)
         self.db.update_tables(dbname='testdb', table_name = 'news', data = data)
 
 
